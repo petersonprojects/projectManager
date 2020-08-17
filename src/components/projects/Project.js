@@ -1,11 +1,18 @@
-import React from 'react'
+import React from 'react';
+import ProjectItem from './ProjectItem'
 
-const Project = () => {
-  return (
-    <>
-      Project
-    </>
-  )
+// show a list of project items
+const Project = (props) => {
+
+    let projectsArr = props.projects.map(project => {
+        return <ProjectItem key={project.id} proj={project} onDelete={props.onDelete}/>
+    })
+
+    return (
+        <>
+            {projectsArr}
+        </>
+    )
 }
 
 export default Project
