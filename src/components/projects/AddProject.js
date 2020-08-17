@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
-class App extends Component {
+class AddProject extends Component {
   render() {
     return (
       <>
-        Home
+        Add Project
       </>
     )
   }
 }
 
-export default App
-
+export default AddProject
