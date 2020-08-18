@@ -44,10 +44,9 @@ class AddContact extends Component {
                     </Form.Group>
 
                     <Form.Group>
-                        
+                        <input type="submit" className="buttonStyle" value="submit"/>
                     </Form.Group>
 
-                    <input type="submit" className="buttonStyle" value="submit"/>
 
                 </Form>
             </>

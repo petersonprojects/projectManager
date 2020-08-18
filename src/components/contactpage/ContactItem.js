@@ -10,15 +10,10 @@ const ContactItem = (props) => {
             <li>
 
                 <span>{props.contact.name} </span> |
-                
-                <span> {props.contact.phone} </span> |
-                <span> {props.contact.email} </span> |
-                <span> {props.contact.address} </span> |
                 <span> {props.contact.city} </span> |
                 <span> {props.contact.state} </span> |
-                <span> {props.contact.zip} </span>
-
-                <button onClick={()=>{props.onDelete(props.contact.id)}}> X</button>
+                <button className="ml-2" onClick={()=>{props.onExpand(props.contact.id)}}> Expand</button>
+                <button className="ml-2" onClick={()=>{props.onDelete(props.contact.id)}}> X</button>
 
             </li>
 

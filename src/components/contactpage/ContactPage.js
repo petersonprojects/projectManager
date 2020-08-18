@@ -10,7 +10,8 @@ class ContactPage extends Component {
         super();
 
         this.state = {
-            contacts: []
+            contacts: [],
+            itemsToExpand: []
         }
 
     }
@@ -73,10 +74,10 @@ class ContactPage extends Component {
     }
 
     handleDeleteContact = (id) => {
+
         let oldContacts = [...this.state.contacts];
 
         let index = oldContacts.findIndex(Obj => {
-
             return Obj.id === id;
         })
 
@@ -89,9 +90,23 @@ class ContactPage extends Component {
         })
     }
 
-    // handleExpandContact = (id) => {
+    handleExpand = (id) => {
+
+        let itemsToExpand = []
+        let oldContacts = [...this.state.contacts];
         
-    // }
+        let index = oldContacts.findIndex(Obj => {
+            return Obj.id === id;
+        })
+
+        itemsToExpand.push(oldContacts[index])
+        console.log(itemsToExpand)
+
+        this.setState({
+            itemsToExpand: itemsToExpand
+        })
+        
+    }
 
     render() {
 
@@ -99,7 +114,7 @@ class ContactPage extends Component {
             <>
                 Add a contact<br/>
                 <AddContact addContact={(newContact)=>this.handleAddContact(newContact)}/>
-                <Contacts contacts={this.state.contacts} onDelete={(id)=>this.handleDeleteContact(id)} />
+                <Contacts expanded={this.state.itemsToExpand} contacts={this.state.contacts} onExpand={(id)=>this.handleExpand(id)} onDelete={(id)=>this.handleDeleteContact(id)} />
             </>
         )
     }
