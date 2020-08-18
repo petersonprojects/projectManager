@@ -4,7 +4,6 @@ import { v1 as uuidv1 } from 'uuid';
 
 class AddProject extends Component {
 
-
     handleSubmit = (e) => {
 
         e.preventDefault();
@@ -14,8 +13,9 @@ class AddProject extends Component {
             title: this.refs.title.value,
             category: this.refs.category.value
         }
-        
+
         this.props.addProject(project);
+
     }
 
 
@@ -43,6 +43,7 @@ class AddProject extends Component {
             </>
         )
     }
+
 }
 
 export default AddProject

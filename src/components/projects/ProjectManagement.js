@@ -80,9 +80,7 @@ class ProjectManagement extends Component {
             <>
                 Project Management
                 <br/>
-                {/* {this.state.projects.map(project=>{
-                    return <div key={project.id}>{project.title} {project.category}</div>
-                })} */}
+
                 <AddProject addProject={(newProject)=>this.handleAddProject(newProject)}/>
 
                 <Project projects={this.state.projects} onDelete={(id)=>this.handleDeleteProject(id)}/>

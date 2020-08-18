@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 // the project title plus a delete button
 const ProjectItem = (props) => {
     return (

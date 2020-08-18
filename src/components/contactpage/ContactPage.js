@@ -23,9 +23,9 @@ class ContactPage extends Component {
         this.setState({
             contacts: [
                 {
-                    name: "Micah",
-                    email: "micahpeterson@live.com",
-                    phone: 5125684217,
+                    name: "Alyson Lauron",
+                    email: "alysonlauron@live.com",
+                    phone: 5126642217,
                     address: "3323 McCue Rd.",
                     city: "Houston",
                     state: "TX",
@@ -33,9 +33,9 @@ class ContactPage extends Component {
                     id: uuidv1()
                 },
                 {
-                    name: "Alyson Lauron",
-                    email: "alysonlauron@live.com",
-                    phone: 5126642217,
+                    name: "Micah",
+                    email: "micahpeterson@live.com",
+                    phone: 5125684217,
                     address: "3323 McCue Rd.",
                     city: "Houston",
                     state: "TX",
@@ -59,8 +59,12 @@ class ContactPage extends Component {
     handleAddContact = (newContact) => {
         
         let oldContacts = [...this.state.contacts];
-
+        
         oldContacts.push(newContact);
+
+        oldContacts.sort((a, b) => {
+            return (a.name.toLowerCase() > b.name.toLowerCase()) ? 1: -1
+        })
 
         this.setState({
             contacts: oldContacts
@@ -73,7 +77,7 @@ class ContactPage extends Component {
         return (
             <>
                 Add a contact<br/>
-                <AddContact addProject={(newContact)=>this.handleAddContact(newContact)}/>
+                <AddContact addContact={(newContact)=>this.handleAddContact(newContact)}/>
                 <Contacts contacts={this.state.contacts} />
             </>
         )
