@@ -59,7 +59,7 @@ class ContactPage extends Component {
     handleAddContact = (newContact) => {
         
         let oldContacts = [...this.state.contacts];
-        
+
         oldContacts.push(newContact);
 
         oldContacts.sort((a, b) => {
@@ -72,13 +72,34 @@ class ContactPage extends Component {
 
     }
 
+    handleDeleteContact = (id) => {
+        let oldContacts = [...this.state.contacts];
+
+        let index = oldContacts.findIndex(Obj => {
+
+            return Obj.id === id;
+        })
+
+        console.log(index)
+
+        oldContacts.splice(index,1);
+
+        this.setState({
+            contacts: oldContacts
+        })
+    }
+
+    // handleExpandContact = (id) => {
+        
+    // }
+
     render() {
 
         return (
             <>
                 Add a contact<br/>
                 <AddContact addContact={(newContact)=>this.handleAddContact(newContact)}/>
-                <Contacts contacts={this.state.contacts} />
+                <Contacts contacts={this.state.contacts} onDelete={(id)=>this.handleDeleteContact(id)} />
             </>
         )
     }

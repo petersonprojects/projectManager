@@ -2,6 +2,7 @@ import React from 'react';
 
 const ContactItem = (props) => {
 
+
     return (
         <>
             <div>
@@ -9,6 +10,7 @@ const ContactItem = (props) => {
             <li>
 
                 <span>{props.contact.name} </span> |
+                
                 <span> {props.contact.phone} </span> |
                 <span> {props.contact.email} </span> |
                 <span> {props.contact.address} </span> |
@@ -16,7 +18,7 @@ const ContactItem = (props) => {
                 <span> {props.contact.state} </span> |
                 <span> {props.contact.zip} </span>
 
-                {/* <a href="#" onClick={()=>{props.onDelete(props.proj.id)}}> X</a> */}
+                <button onClick={()=>{props.onDelete(props.contact.id)}}> X</button>
 
             </li>
 

@@ -8,7 +8,7 @@ const ProjectItem = (props) => {
             <li>
                 <span>{props.proj.title} </span>
                 {props.proj.category}
-                <a href="#" onClick={()=>{props.onDelete(props.proj.id)}}> X</a>
+                <button onClick={()=>{props.onDelete(props.proj.id)}}> X</button>
             </li>
 
         </div>
