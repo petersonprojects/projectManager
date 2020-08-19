@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Contacts from './Contacts';
 import AddContact from './AddContact';
+import {Container} from 'react-bootstrap'
+import './Contact.css';
 import { v1 as uuidv1 } from 'uuid';
 
 class ContactPage extends Component {
@@ -112,9 +114,11 @@ class ContactPage extends Component {
 
         return (
             <>
+                <Container>
                 Add a contact<br/>
                 <AddContact addContact={(newContact)=>this.handleAddContact(newContact)}/>
                 <Contacts expanded={this.state.itemsToExpand} contacts={this.state.contacts} onExpand={(id)=>this.handleExpand(id)} onDelete={(id)=>this.handleDeleteContact(id)} />
+                </Container>
             </>
         )
     }

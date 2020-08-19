@@ -40,6 +40,7 @@ const Contacts = (props) => {
 
     return (
         <>
+            
             {contactsArr}
             {expanded}
         </>
